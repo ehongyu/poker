@@ -1,13 +1,13 @@
 package org.hongyu.poker;
 
-public class Table {
+public class Game {
 
     private Deck deck = null;
     private Player[] players = null;
     private Card[] publicCards = null;
     private int playerNumber;
 
-    public Table(int playerNumber)
+    public Game(int playerNumber)
     {
         this.playerNumber = playerNumber;
         reset();
@@ -47,13 +47,8 @@ public class Table {
         }
     }
 
-
-    public static void main(String[] args)
+    public Player[] getPlayers()
     {
-        Table table = new Table(9);
-        table.dealCardsToPlayers();
-
-        return;
+        return players;
     }
-
 }

@@ -1,0 +1,25 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile 'org.testng:testng:6.9.10'
+}
+
+test {
+    // enable TestNG support (default is JUnit)
+    useTestNG()
+    scanForTestClasses = false  
+    include '**/*'
+
+    testLogging {
+        showStandardStreams = true
+
+        // log results to "build/test-results" directory
+        exceptionFormat "full"
+        events "started", "passed", "skipped", "failed", "standardOut", "standardError"
+    }
+}
