@@ -13,7 +13,6 @@ public class CardTest {
         int value = card.compareTo(card2);
 
         Assert.assertEquals(0, value);
-
     }
 
 }

@@ -26,8 +26,23 @@ public class Card implements Comparable<Card> {
         return this.getRank().getSymbol() + " " + this.getSuit().getSymbol();
     }
 
-    public int compareTo(Card card) {
+
+    public int compareTo(Card card)
+    {
         return this.getRank().compareTo(card.getRank());
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Card card = (Card) o;
+        return rank == card.rank &&
+                suit == card.suit;
+    }
+
+    @Override
+    public int hashCode() {
+        return com.google.common.base.Objects.hashCode(rank, suit);
+    }
 }

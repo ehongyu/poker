@@ -12,7 +12,7 @@ public class GameTest {
     public void testGame()
     {
         Game game = new Game(9);
-        game.dealCardsToPlayers();
+        game.dealHoleCards();
 
         Assert.assertEquals(9, game.getPlayers().length);
     }

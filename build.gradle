@@ -6,11 +6,12 @@ repositories {
 }
 
 dependencies {
+    compile group: 'com.google.guava', name: 'guava', version: '19.0'
     testCompile 'org.testng:testng:6.9.10'
 }
 
 test {
-    // enable TestNG support (default is JUnit)
+    // enable TestNG support
     useTestNG()
     scanForTestClasses = false  
     include '**/*'
