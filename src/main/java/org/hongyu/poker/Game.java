@@ -13,22 +13,6 @@ public class Game {
         reset();
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Game game = (Game) o;
-        return playerNumber == game.playerNumber &&
-                com.google.common.base.Objects.equal(deck, game.deck) &&
-                com.google.common.base.Objects.equal(players, game.players) &&
-                com.google.common.base.Objects.equal(pubCards, game.pubCards);
-    }
-
-    @Override
-    public int hashCode() {
-        return com.google.common.base.Objects.hashCode(deck, players, pubCards, playerNumber);
-    }
-
     public void reset()
     {
         deck = new Deck();
